@@ -1,5 +1,5 @@
-'use strict';
-/* global shoppingList, store, cuid */
+// 'use strict';
+/* global shoppingList, store, cuid, $ */
 
 // eslint-disable-next-line no-unused-vars
 $(document).ready(function() {

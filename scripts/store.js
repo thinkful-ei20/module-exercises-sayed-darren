@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 const store = (function () {
   const foo = 'bar';
   const items = [
@@ -9,4 +9,10 @@ const store = (function () {
   ];
   const hideCheckedItems = false;
   const searchTerm = '';
+  
+  return {
+    items,
+    hideCheckedItems,
+    searchTerm,
+  };
 }() );
