@@ -4,7 +4,7 @@
 
 const Item = ( function () {
   const validateName = function(name) {
-    if (typeof name !== 'string') {
+    if (!name) {
       throw new TypeError('Name does not exist');
     }
   };
