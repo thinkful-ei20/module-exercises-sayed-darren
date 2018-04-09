@@ -27,15 +27,22 @@ const store = (function () {
   };
 
   const findAndToggleChecked = function(id) {
-    const currentItem = this.findById(id);
-    currentItem.checked = !currentItem.checked;
+    // const currentItem = this.findById(id);
+    for (let i = 0; i < store.items.length; i++) {
+      if (store.items[i].id === id) {
+        store.items[i].checked = !store.items[i].checked;
+      }
+    }
   };
 
   const findAndUpdateName = function(id,newName) {
     try {
       Item.validateName(newName);
-      const currentItem = findById(id);
-      currentItem.name = newName;
+      for (let i = 0; i < store.items.length; i++) {
+        if (store.items[i].id === id) {
+          store.items[i].name = newName;
+        }
+      }
     } catch (error) {
       console.log(`Cannot update name: ${error.message}`);
     }
