@@ -12,7 +12,7 @@ const store = (function () {
   const searchTerm = '';
 
   const findById = function(id) {
-    store.items.find(item => item.id === id);
+    console.log(store.items.find(item => item.id === id));
   };
 
   const addItem = function(name) {
@@ -34,16 +34,16 @@ const store = (function () {
   const findAndUpdateName = function(id,newName) {
     try {
       Item.validateName(newName);
-      const currentItem = this.items.findById(id);
+      const currentItem = findById(id);
       currentItem.name = newName;
     } catch (error) {
-      console.log('Cannot update name: {error.message}');
+      console.log(`Cannot update name: ${error.message}`);
     }
   };
 
   const findAndDelete = function(id) {
-    const currentItem = this.items.findById(id);
-    return this.items.filter(item => item.id !== currentItem);
+    let filtered = this.items.filter(item => item.id !== id);
+    this.items = filtered;
   };
 
 
